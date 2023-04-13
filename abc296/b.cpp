@@ -4,7 +4,6 @@ using namespace std;
 
 int main() {
     string s;
-    char x = 'a';
     for (int i = 0; i < 8; i++)
     {
         cin >> s;
@@ -12,7 +11,7 @@ int main() {
         {
             if (s[j] == '*')
             {
-                cout << char(x+i) << j+1 << endl;
+                cout << char('a'+j) << 7-i+1 << endl;
             }
             
         }
