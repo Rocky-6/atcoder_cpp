@@ -8,7 +8,7 @@ int main() {
     long long n, m;
     cin >> n >> m;
     long long ans = INF;
-    for (long long a = 1; a <= m / a + 1; a++) {
+    for (long long a = 1; a * a - a < m; a++) {
         long long b = (m + a - 1) / a;
         if (a <= n && b <= n) ans = min(ans, a * b);
     }
