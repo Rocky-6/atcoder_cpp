@@ -1,8 +1,16 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-int main() {
+int f(int k) {
+    if (k == 0)
+        return 1;
+    else {
+        return k * f(k - 1);
+    }
+}
 
-    return 0;
+int main() {
+    int n;
+    cin >> n;
+    cout << f(n) << endl;
 }
