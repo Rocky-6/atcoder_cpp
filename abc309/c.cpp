@@ -2,32 +2,25 @@
 
 using namespace std;
 using ll = long long;
+const ll mod = 1e9 + 7;
 
 int main() {
     int n;
-    ll k;
-    cin >> n >> k;
+    cin >> n;
+    vector<int> c(n);
 
-    map<int, ll> mp;
-    ll total = 0;
     for (int i = 0; i < n; i++) {
-        int a;
-        ll b;
-        cin >> a >> b;
-        mp[a] += b;
-        total += b;
+        cin >> c[i];
     }
-    if (total <= k) {
-        cout << 1 << endl;
-        return 0;
+    sort(c.begin(), c.end());
+    int minus = 0;
+    ll ans = 1;
+    for (int i = 0; i < n; i++) {
+        ans *= c[i] - minus;
+        ans %= mod;
+        minus++;
     }
-    auto itr = mp.begin();
-    while (total > k) {
-        total -= itr->second;
-        itr++;
-    }
-    itr--;
-    cout << itr->first + 1 << endl;
+    cout << ans << endl;
 
     return 0;
 }
