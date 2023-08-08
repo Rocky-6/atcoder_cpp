@@ -3,6 +3,12 @@
 using namespace std;
 
 int main() {
-
+    string s;
+    cin >> s;
+    if (s == "Hello,World!")
+        cout << "AC";
+    else
+        cout << "WA";
+    cout << endl;
     return 0;
 }
